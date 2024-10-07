@@ -1,0 +1,333 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Noto Sans Thai', sans-serif;
+    font-weight: 400; /* ใช้น้ำหนักฟอนต์ตามต้องการ */
+    line-height: 1.6;
+    background-color: #ffffff; /* พื้นหลังสีขาว */
+    color: #333; /* ข้อความสีดำ */
+    transition: opacity 0.5s ease-in-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.fade-in {
+    opacity: 0; /* เริ่มต้นที่ความทึบ 0 */
+    transform: translateY(20px); /* เลื่อนลงจากตำแหน่ง */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* เอฟเฟกต์การเปลี่ยนแปลง */
+}
+
+.fade-in.show {
+    opacity: 1; /* ทำให้เห็น */
+    transform: translateY(0); /* กลับไปที่ตำแหน่งเดิม */
+}
+
+/* Header */
+header {
+    background: #ece8e8; /* พื้นหลังสีแดง */
+    color: #ffffff; /* ข้อความสีขาว */
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    animation: fadeIn 1s; /* เพิ่มการสร้างสรรค์ */
+}
+
+/* Navbar Styles */
+.navbar {
+    height: 70px; /* กำหนดความสูงของ navbar */
+}
+
+.navbar-brand img {
+    height: 75px;
+    width: auto;
+    vertical-align: middle;
+    border-radius: 10px; /* ทำให้มุมของภาพโค้งมน */
+}
+
+.navbar-logo {
+    height: 60px;
+    width: auto;
+    vertical-align: middle;
+    border-radius: 10px;
+    transition: all 0.3s ease; /* เพิ่มการเปลี่ยนแปลงให้สมูท */
+}
+
+.navbar-logo:hover {
+    transform: scale(1.05); /* ขยายขนาดเล็กน้อยเมื่อชี้ */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */ 
+    border-radius: 15px; /* เพิ่มความโค้ง */
+}
+
+
+.navbar-brand {
+    font-size: 1.5em; 
+    color: #ffffff; /* ข้อความสีขาว */
+    font-weight: bold; 
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: #ffcccc; /* สีขาวอมชมพูเมื่อชี้ */
+}
+
+.nav-link {
+    position: relative; /* ใช้ตำแหน่งสัมพัทธ์ */
+    padding: 10px 15px; /* เพิ่ม padding เพื่อสร้างพื้นที่คลิก */
+    border-radius: 20px; /* ให้มุมโค้ง */
+    transition: background-color 0.3s ease, color 0.3s ease; /* เพิ่มการเปลี่ยนแปลง */
+}
+
+.nav-link:hover {
+    color: #ffffff; /* ข้อความสีขาว */
+    background-color: hsla(0, 85%, 48%, 0.89); /* เปลี่ยนเป็นสีส้มสดใส */
+    border-radius: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* เพิ่มการเปลี่ยนแปลง */
+    transform: scale(1.05); /* ขยายขนาดเล็กน้อยเมื่อชี้ */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.877), rgb(109, 8, 8)); /* สีแดงใส */
+    color: #ffffff;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h2 {
+    font-size: 3em; 
+    margin-bottom: 10px;
+    animation: slideIn 1s; /* เอฟเฟกต์การเลื่อนเข้ามา */
+}
+
+.hero button {
+    background-color: #000000; /* ปุ่มสีแดง */
+    color: #ffffff; /* ข้อความสีขาว */
+    border: none; 
+    padding: 12px 30px; 
+    border-radius: 30px; 
+    font-size: 1.5em; 
+    font-weight: bold; 
+    cursor: pointer; 
+    position: relative; 
+    overflow: hidden; 
+    transition: background-color 0.4s ease, transform 0.3s ease; 
+}
+
+.hero button:hover {
+    background-color: #3b0b0b; /* ปุ่มสีแดงเข้มเมื่อชี้ */
+    transform: translateY(-3px);
+}
+
+/* Main Section */
+main {
+    padding: 20px 0;
+    background-color: #ffffff; /* พื้นหลังสีขาว */
+}
+
+.service {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.service:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 0, 0, 0.1); /* เปลี่ยนสีพื้นหลังเป็นสีแดงใสเมื่อชี้ */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0; /* เพิ่มพื้นที่ด้านบนและล่าง */
+    background: linear-gradient(135deg, #292828, #292828); /* สีพื้นหลังเป็นการไล่สี */
+    color: #ffffff; /* สีข้อความเป็นสีขาว */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.4); /* เงาให้ดูมีมิติ */
+    font-family: 'Noto Sans Thai', sans-serif; /* ใช้ฟอนต์ที่กำหนด */
+}
+
+/* เพิ่มสไตล์สำหรับลิงก์ใน Footer */
+footer a {
+    color: #ffffff; /* สีลิงก์เป็นสีขาว */
+    text-decoration: none; /* เอาเส้นใต้ลิงก์ออก */
+    margin: 0 15px; /* ช่องว่างระหว่างลิงก์ */
+    transition: color 0.3s; /* เอฟเฟกต์เปลี่ยนสี */
+}
+
+footer a:hover {
+    color: #f0f0f0; /* เปลี่ยนสีเมื่อเมาส์ชี้ */
+}
+
+/* เพิ่มสไตล์สำหรับข้อความใน Footer */
+footer p {
+    margin: 10px 0; /* ช่องว่างด้านบนและล่าง */
+    font-size: 14px; /* ขนาดฟอนต์ */
+}
+
+
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.loader {
+    border: 8px solid rgba(255, 255, 255, 0.3);
+    border-top: 8px solid #ff0000; /* สีแดงสำหรับการโหลด */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.parallax {
+    height: 500px; /* ความสูงของส่วนนี้ */
+    background-attachment: fixed; /* ทำให้พื้นหลังติดกับมุมมอง */
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+}
+
+.content {
+    position: relative; 
+    z-index: 2; /* ทำให้เนื้อหามีระดับสูงกว่าพื้นหลัง */
+    text-align: center; 
+    color: white; 
+    padding: 20px; 
+}
+
+/* Form Styles */
+.form-control {
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: #ff0000; /* ขอบเมื่อโฟกัสเป็นสีแดง */
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); /* เงาสีแดงเมื่อโฟกัส */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2em; /* ปรับขนาดสำหรับหน้าจอเล็ก */
+    }
+
+    .hero button {
+        padding: 10px 20px; /* ปรับขนาดปุ่ม */
+    }
+}
+
+.link {
+    position: absolute; /* ใช้ตำแหน่งแบบ absolute */
+    top: 20px; /* ระยะห่างจากด้านบน */
+    left: 20px; /* ระยะห่างจากด้านซ้าย */
+    z-index: 1000; /* ให้แน่ใจว่าลิงก์อยู่ด้านบนสุด */
+}
+
+.link a {
+    text-decoration: none; /* เอาเส้นใต้ลิงก์ออก */
+    color: #e53935; /* สีลิงก์ */
+    font-weight: bold; /* ทำให้ตัวหนา */
+}
+
+.link a:hover {
+    color: #c62828; /* เปลี่ยนสีลิงก์เมื่อเมาส์ชี้ */
+}
+
+.search-container {
+    text-align: center;
+    margin: 10px 0;
+}
+
+#searchInput {
+    padding: 10px;
+    width: 80%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* เพิ่มการเปลี่ยนแปลง */
+    outline: none; /* ลบเส้นขอบออก */
+}
+
+#searchInput:focus {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+    background-color: rgba(255, 255, 255, 0.8); /* เพิ่มสีพื้นหลังเมื่อโฟกัส */
+}
+
+.contact-icon {
+    width: 20px; /* ปรับขนาดไอคอนตามต้องการ */
+    height: auto;
+    margin-right: 8px; /* เพิ่มระยะห่างระหว่างไอคอนกับข้อความ */
+    vertical-align: middle; /* จัดตำแหน่งให้กลาง */
+}
+
+.phone-icon {
+    width: 20px; /* ปรับขนาดไอคอนตามต้องการ */
+    height: auto;
+    margin-right: 8px; /* เพิ่มระยะห่างระหว่างไอคอนกับข้อความ */
+    vertical-align: middle; /* จัดตำแหน่งให้กลาง */
+}
+
+.product {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* เอฟเฟกต์การเปลี่ยนแปลงที่นุ่มนวล */
+    border-radius: 10px; /* มุมโค้ง */
+    background-color: #ffffff; /* สีพื้นหลัง */
+}
+
+.product:hover {
+    transform: translateY(-5px) scale(1.02); /* เลื่อนขึ้นและขยายเล็กน้อย */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+    background-color: rgba(255, 0, 0, 0.05); /* เปลี่ยนพื้นหลังเล็กน้อย */
+}
+
+.card-img-top {
+    max-width: 45%; /* จำกัดความกว้างของรูปภาพให้เต็มที่ */
+    height: auto; /* รักษาสัดส่วนความสูง */
+    border-radius: 10px; /* ทำมุมให้โค้งมน */
+}
+
+.swal2-popup {
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}

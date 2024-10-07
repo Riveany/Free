@@ -1,0 +1,90 @@
+/* style.css */
+/* for register.html */
+body {
+    font-family: 'Noto Sans Thai', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.3s ease;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+.register-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.register-container:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #e53935;
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+    border-color: #e53935;
+    box-shadow: 0 0 8px rgba(233, 57, 53, 0.5);
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: #e53935;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #c62828;
+    transform: translateY(-3px);
+}
+
+.link {
+    text-align: center;
+    margin-top: 10px;
+    color: #e53935;
+    transition: color 0.3s ease;
+}
+
+.link a {
+    text-decoration: none;
+    color: #e53935;
+    font-weight: bold;
+}
+
+.link a:hover {
+    color: #c62828;
+}

@@ -1,0 +1,55 @@
+body {
+    font-family: 'Noto Sans Thai', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* ปิดการเลื่อนหน้าจอ */
+}
+
+.loader-container {
+    text-align: center;
+}
+
+.logo {
+    width: 150px; /* ปรับขนาดโลโก้ตามต้องการ */
+    margin-bottom: 20px;
+    border-radius: 50%; /* ทำให้โลโก้กลม */
+    animation: float 2s ease-in-out infinite; /* เพิ่มการเคลื่อนไหว */
+}
+
+.loader {
+    border: 16px solid #f3f3f3; /* สีพื้นหลังของวงกลม */
+    border-top: 16px solid #d60d0d; /* สีของส่วนที่หมุน */
+    border-radius: 50%;
+    width: 60px; /* ขนาดวงกลม */
+    height: 60px; /* ขนาดวงกลม */
+    animation: spin 2s linear infinite; /* การหมุน */
+    margin: 20px auto; /* จัดกลาง */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px); /* เคลื่อนที่ขึ้น */
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+p {
+    font-size: 20px;
+    color: #333;
+    margin-top: 10px;
+}

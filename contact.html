@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ติดต่อเรา</title>
+    <link rel="icon" type="image/png" href="https://media.discordapp.net/attachments/1292356178818371725/1292444613839421531/44729.webp?ex=6703c258&is=670270d8&hm=9fefa7bf0e2e7aeeb851fd8c20e1e471da908aea8f04ffdbc50fd132afc99637&=&format=webp&width=960&height=421">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100;400;700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fade-in" style="height: 45px;">
+            <a class="navbar-brand" href="index.html">
+                <img src="https://media.discordapp.net/attachments/1292356178818371725/1292444613839421531/44729.webp?ex=6703c258&is=670270d8&hm=9fefa7bf0e2e7aeeb851fd8c20e1e471da908aea8f04ffdbc50fd132afc99637&=&format=webp&width=960&height=421" alt="ร้านขายของออนไลน์" class="navbar-logo">
+            </a>
+            <div class="collapse navbar-collapse fade-in">
+                <ul class="navbar-nav ml-auto">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="ค้นหาบริการ..." onkeyup="searchServices()">
+                    </div>  
+                    <li class="nav-item"><a class="nav-link" href="index.html">หน้าแรก</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">สินค้า</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cart.html">ตะกร้า</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">ติดต่อเรา</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html" id="loginLink">เข้าสู่ระบบ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container my-5 fade-in">
+            <h2 class="text-center mb-4 fade-in">ติดต่อเรา</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h4>ข้อมูลการติดต่อ</h4>
+                    <p>ที่อยู่: 123 ถนนตัวอย่าง, ตำบลตัวอย่าง, อำเภอตัวอย่าง, จังหวัดตัวอย่าง</p>
+                    <p>โทรศัพท์: 012-345-6789</p>
+                    <p>อีเมล: <a href="mailto:info@example.com">info@example.com</a></p>
+                    <p>เวลาทำการ: จันทร์ - ศุกร์ 9:00 - 18:00 น.</p>
+                </div>
+                <div class="col-md-6 fade-in">
+                    <h4>ส่งข้อความถึงเรา</h4>
+                    <form id="contactForm" onsubmit="return handleFormSubmit(event)">
+                        <div class="form-group ">
+                            <label for="name">ชื่อ</label>
+                            <input type="text" class="form-control" id="name" placeholder="กรุณากรอกชื่อ" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">อีเมล</label>
+                            <input type="email" class="form-control" id="email" placeholder="กรุณากรอกอีเมล" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">ข้อความ</label>
+                            <textarea class="form-control" id="message" rows="4" placeholder="กรุณากรอกข้อความ" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">ส่งข้อความ</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center fade-in">
+        <p>&copy; 2024 ร้านขายของออนไลน์</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // ฟังก์ชันจัดการการส่งข้อความ
+        function handleFormSubmit(event) {
+            event.preventDefault(); // ป้องกันการส่งฟอร์ม
+
+            // รับค่าจากฟอร์ม
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // แสดง SweetAlert2 หลังจากส่งข้อความสำเร็จ
+            Swal.fire({
+                title: 'ส่งข้อความสำเร็จ!',
+                text: `ขอบคุณ ${name} ที่ติดต่อเรา! เราจะติดต่อกลับในเร็วๆ นี้`,
+                icon: 'success',
+                confirmButtonText: 'ตกลง'
+            });
+
+            // รีเซ็ตฟอร์มหลังจากส่งข้อความ
+            document.getElementById('contactForm').reset();
+            return false; // หลีกเลี่ยงการส่งฟอร์มจริง
+        }
+    </script>
+</body>
+</html>

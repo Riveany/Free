@@ -1,0 +1,117 @@
+/* style.css */
+body {
+    font-family: 'Noto Sans Thai', sans-serif;
+    background-color: #f4f4f4; /* สีพื้นหลัง */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* ทำให้เต็มความสูงของหน้าจอ */
+    transition: background-color 0.3s ease, opacity 0.3s ease; /* เอฟเฟกต์การเปลี่ยนสีพื้นหลัง */
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1; /* เพิ่มค่าความโปร่งใส */
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+
+
+.login-container {
+    background: #ffffff; /* สีพื้นหลังของฟอร์มล็อกอิน */
+    padding: 30px; /* เพิ่มพื้นที่ padding */
+    border-radius: 15px; /* มุมมน */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* เงาเข้มขึ้น */
+    width: 300px; /* กำหนดความกว้างของฟอร์ม */
+    transition: transform 0.3s ease; /* เอฟเฟกต์การขยาย */
+}
+
+.login-container:hover {
+    transform: translateY(-5px); /* ขยับขึ้นเล็กน้อยเมื่อเมาส์ชี้ */
+}
+
+h2 {
+    text-align: center; /* จัดกลาง */
+    margin-bottom: 20px;
+    color: #e53935; /* เปลี่ยนสีข้อความหัวข้อเป็นสีแดง */
+    font-weight: 700; /* น้ำหนักตัวอักษร */
+}
+
+.form-group {
+    margin-bottom: 15px; /* ช่องว่างระหว่างฟิลด์ */
+}
+
+.form-control {
+    width: 100%; /* ให้กว้างเต็มฟอร์ม */
+    padding: 12px; /* เพิ่มพื้นที่ padding */
+    border-radius: 8px; /* มุมมน */
+    border: 1px solid #ccc; /* เส้นขอบ */
+    transition: border-color 0.3s, box-shadow 0.3s; /* เอฟเฟกต์การเปลี่ยนสีเส้นขอบ */
+}
+
+.form-control:focus {
+    border-color: #e53935; /* เปลี่ยนสีเส้นขอบเมื่อโฟกัส */
+    box-shadow: 0 0 8px rgba(233, 57, 53, 0.5); /* เอฟเฟกต์เงา */
+}
+
+.btn-primary {
+    width: 100%; /* ให้กว้างเต็มฟอร์ม */
+    padding: 12px; /* เพิ่มพื้นที่ padding */
+    background-color: #e53935; /* สีพื้นหลังของปุ่ม */
+    color: white; /* สีตัวอักษรของปุ่ม */
+    border: none; /* ไม่มีเส้นขอบ */
+    border-radius: 8px; /* มุมมน */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์ */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* เอฟเฟกต์การเปลี่ยนสี */
+}
+
+.btn-primary:hover {
+    background-color: #c62828; /* เปลี่ยนสีพื้นหลังเมื่อเมาส์ชี้ */
+    transform: translateY(-3px); /* ขยับขึ้นเล็กน้อย */
+}
+
+.link {
+    position: absolute; /* ใช้ตำแหน่งแบบ absolute */
+    top: 20px; /* ระยะห่างจากด้านบน */
+    left: 20px; /* ระยะห่างจากด้านซ้าย */
+    z-index: 1000; /* ให้แน่ใจว่าลิงก์อยู่ด้านบนสุด */
+}
+
+.link a {
+    text-decoration: none; /* เอาเส้นใต้ลิงก์ออก */
+    color: #e53935; /* สีลิงก์ */
+    font-weight: bold; /* ทำให้ตัวหนา */
+}
+
+.link a:hover {
+    color: #c62828; /* เปลี่ยนสีลิงก์เมื่อเมาส์ชี้ */
+}
+
+
+.profile-container {
+    background: #ffffff; /* สีพื้นหลังของโปรไฟล์ */
+    padding: 30px; /* เพิ่มพื้นที่ padding */
+    border-radius: 15px; /* มุมมน */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* เงา */
+    width: 300px; /* กำหนดความกว้าง */
+    margin: auto; /* จัดกลาง */
+    text-align: center; /* จัดข้อความกลาง */
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #e53935; /* เปลี่ยนสีข้อความหัวข้อเป็นสีแดง */
+}
+
+.btn-secondary {
+    background-color: #ccc; /* สีปุ่มออกจากระบบ */
+    color: #000; /* สีตัวอักษร */
+}
+
+.btn-secondary:hover {
+    background-color: #b0b0b0; /* สีเมื่อชี้เมาส์ */
+}

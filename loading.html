@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading</title>
+    <link rel="icon" type="image/png" href="https://media.discordapp.net/attachments/1292356178818371725/1292444613839421531/44729.webp?ex=6703c258&is=670270d8&hm=9fefa7bf0e2e7aeeb851fd8c20e1e471da908aea8f04ffdbc50fd132afc99637&=&format=webp&width=960&height=421">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="loading.css">
+</head>
+<body>
+    <div class="loader-container">
+        <img src="https://media.discordapp.net/attachments/1292356178818371725/1292444613839421531/44729.webp?ex=6703c258&is=670270d8&hm=9fefa7bf0e2e7aeeb851fd8c20e1e471da908aea8f04ffdbc50fd132afc99637&=&format=webp&width=960&height=421" alt="โลโก้" class="logo">
+        <div class="loader"></div>
+        <p>กำลังโหลดข้อมูล...</p>
+    </div>
+
+    <script>
+        // Simulate a loading delay
+        setTimeout(() => {
+            window.location.href = 'index.html'; // Redirect to index.html after loading
+        }, 3000); // Change the time as needed (3000ms = 3 seconds)
+    </script>
+</body>
+</html>

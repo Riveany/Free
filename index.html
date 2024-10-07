@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เว็บไซต์</title>
+    <link rel="icon" type="image/png" href="https://media.discordapp.net/attachments/1292356178818371725/1292444613839421531/44729.webp?ex=6703c258&is=670270d8&hm=9fefa7bf0e2e7aeeb851fd8c20e1e471da908aea8f04ffdbc50fd132afc99637&=&format=webp&width=960&height=421">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100;400;700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+</head>
+<body onload="showWelcomeAlert()">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fade-in" style="height: 45px;">
+            <a class="navbar-brand" href="loading.html">
+                <img src="https://media.discordapp.net/attachments/1292356178818371725/1292444613839421531/44729.webp?ex=6703c258&is=670270d8&hm=9fefa7bf0e2e7aeeb851fd8c20e1e471da908aea8f04ffdbc50fd132afc99637&=&format=webp&width=960&height=421" alt="ร้านขายของออนไลน์" class="navbar-logo">
+            </a>
+            <div class="collapse navbar-collapse fade-in">
+                <ul class="navbar-nav ml-auto">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="ค้นหาบริการ..." onkeyup="searchServices()">
+                    </div>                    
+                    <li class="nav-item"><a class="nav-link" href="loading.html">หน้าแรก</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">สินค้า</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cart.html">ตะกร้า</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">ติดต่อเรา</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html" id="loginLink">เข้าสู่ระบบ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero fade-in text-center">
+        <h2 class="hero-title">Chicago Shop</h2>
+        <p class="hero-description">บริการ รับทำ โมเดล,ระบบ,สคริป,อนิเมชั่น</p>
+        <button class="btn btn-danger start-button" onclick="confirmGoToServices()">ซื้อสินค้า</button>
+    </section>
+    
+    <script>
+        function confirmGoToServices() {
+            Swal.fire({
+                title: 'ยืนยันการดำเนินการ',
+                text: "คุณต้องการไปยังหน้าบริการหรือไม่?",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'ใช่',
+                cancelButtonText: 'ไม่'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // ถ้าผู้ใช้เลือก 'ใช่'
+                    window.location.href = 'services.html'; //
+                } else {
+                    // ถ้าผู้ใช้เลือก 'ไม่'
+                    Swal.fire({
+                        title: 'โอเครไม่เป็นไร :(',
+                        icon: 'info',
+                        confirmButtonText: 'ตกลง'
+                    });
+                }
+            });
+        }
+    </script> 
+    
+    <main>
+        <div class="container my-5">
+            <h2 class="text-center mb-4 fade-in">สินค้าของเรา</h2>
+            <div class="row">
+                <div class="col-md-4 fade-in">
+                    <div class="product card shadow-sm">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="ชื่อสินค้า 1" class="card-img-top">
+                        <div class="card-body">
+                            <h3 class="card-title">ชื่อสินค้า 1</h3>
+                            <p class="card-text">รายละเอียดสินค้า 1 ที่จะช่วยให้ธุรกิจของคุณเติบโต</p>
+                            <p class="card-text font-weight-bold">ราคา: 1,000 บาท</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 fade-in">
+                    <div class="product card shadow-sm">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="ชื่อสินค้า 1" class="card-img-top">
+                        <div class="card-body">
+                            <h3 class="card-title">ชื่อสินค้า 2</h3>
+                            <p class="card-text">รายละเอียดสินค้า 2 ที่จะช่วยให้ธุรกิจของคุณเติบโต</p>
+                            <p class="card-text font-weight-bold">ราคา: 2,000 บาท</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="product card shadow-sm">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="ชื่อสินค้า 1" class="card-img-top">
+                        <div class="card-body">
+                            <h3 class="card-title">ชื่อสินค้า 3</h3>
+                            <p class="card-text">รายละเอียดสินค้า 3 ที่จะช่วยให้ธุรกิจของคุณเติบโต</p>
+                            <p class="card-text font-weight-bold">ราคา: 3,000 บาท</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="product card shadow-sm">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="ชื่อสินค้า 1" class="card-img-top">
+                        <div class="card-body">
+                            <h3 class="card-title">ชื่อสินค้า 4</h3>
+                            <p class="card-text">รายละเอียดสินค้า 4 ที่จะช่วยให้ธุรกิจของคุณเติบโต</p>
+                            <p class="card-text font-weight-bold">ราคา: 1,500 บาท</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="product card shadow-sm">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="ชื่อสินค้า 1" class="card-img-top"> 
+                        <div class="card-body">
+                            <h3 class="card-title">ชื่อสินค้า 5</h3>
+                            <p class="card-text">รายละเอียดสินค้า 5 ที่จะช่วยให้ธุรกิจของคุณเติบโต</p>
+                            <p class="card-text font-weight-bold">ราคา: 2,500 บาท</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="product card shadow-sm">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="ชื่อสินค้า 1" class="card-img-top">
+                        <div class="card-body">
+                            <h3 class="card-title">ชื่อสินค้า 6</h3>
+                            <p class="card-text">รายละเอียดสินค้า 6 ที่จะช่วยให้ธุรกิจของคุณเติบโต</p>
+                            <p class="card-text font-weight-bold">ราคา: 4,000 บาท</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="text-center fade-in">
+        <p>&copy; 2024 ร้านขายของออนไลน์</p>
+    </footer>
+
+    <script>
+        function showWelcomeAlert() {
+            Swal.fire({
+                title: 'ยินดีต้อนรับ!',
+                text: "ขอบคุณที่เข้ามาเยี่ยมชมเว็บไซต์ของเรา!",
+                icon: 'success',
+                confirmButtonText: 'ตกลง'
+            });
+        }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

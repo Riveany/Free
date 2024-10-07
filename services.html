@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สินค้า</title>
+    <link rel="icon" type="image/png" href="https://media.discordapp.net/attachments/1292356178818371725/1292444613839421531/44729.webp?ex=6703c258&is=670270d8&hm=9fefa7bf0e2e7aeeb851fd8c20e1e471da908aea8f04ffdbc50fd132afc99637&=&format=webp&width=960&height=421">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100;400;700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fade-in" style="height: 45px;">
+            <a class="navbar-brand" href="index.html">
+                <img src="https://media.discordapp.net/attachments/1292356178818371725/1292444613839421531/44729.webp?ex=6703c258&is=670270d8&hm=9fefa7bf0e2e7aeeb851fd8c20e1e471da908aea8f04ffdbc50fd132afc99637&=&format=webp&width=960&height=421" alt="ร้านขายของออนไลน์" class="navbar-logo">
+            </a>
+            <div class="collapse navbar-collapse fade-in">
+                <ul class="navbar-nav ml-auto">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="ค้นหาบริการ..." onkeyup="searchServices()">
+                    </div>                    
+                    <li class="nav-item"><a class="nav-link" href="index.html">หน้าแรก</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">สินค้า</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cart.html">ตะกร้า</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">ติดต่อเรา</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html" id="loginLink">เข้าสู่ระบบ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section class="hero fade-in">
+        <h2 class="hero-title">สินค้าของเรา</h2>
+        <p class="hero-description">บริการ รับทำ โมเดล,ระบบ,สคริป,อนิเมชั่น</p>
+    </section>
+
+    <main>
+        <div class="container my-5">
+            <h2 class="text-center mb-4 fade-in">สินค้า</h2>
+            <div class="row">
+                <div class="col-md-4 fade-in">
+                    <div class="product card shadow-sm">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="ชื่อสินค้า 1" class="card-img-top">
+                        <div class="card-body">
+                            <h3 class="card-title">ชื่อสินค้า 1</h3>
+                            <p class="card-text">รายละเอียดสินค้า 1 ที่จะช่วยให้ธุรกิจของคุณเติบโต</p>
+                            <p class="card-text font-weight-bold">ราคา: 1,000 บาท</p>
+                            <button class="btn btn-primary" onclick="addToCart('ชื่อสินค้า 1', 1000)">เพิ่มลงตะกร้า</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="product card shadow-sm">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="ชื่อสินค้า 2" class="card-img-top">
+                        <div class="card-body">
+                            <h3 class="card-title">ชื่อสินค้า 2</h3>
+                            <p class="card-text">รายละเอียดสินค้า 2 ที่จะช่วยให้ธุรกิจของคุณเติบโต</p>
+                            <p class="card-text font-weight-bold">ราคา: 2,000 บาท</p>
+                            <button class="btn btn-primary" onclick="addToCart('ชื่อสินค้า 2', 2000)">เพิ่มลงตะกร้า</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="product card shadow-sm">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="ชื่อสินค้า 3" class="card-img-top">
+                        <div class="card-body">
+                            <h3 class="card-title">ชื่อสินค้า 3</h3>
+                            <p class="card-text">รายละเอียดสินค้า 3 ที่จะช่วยให้ธุรกิจของคุณเติบโต</p>
+                            <p class="card-text font-weight-bold">ราคา: 3,000 บาท</p>
+                            <button class="btn btn-primary">เพิ่มลงตะกร้า</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="product card shadow-sm">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="ชื่อสินค้า 4" class="card-img-top">
+                        <div class="card-body">
+                            <h3 class="card-title">ชื่อสินค้า 4</h3>
+                            <p class="card-text">รายละเอียดสินค้า 4 ที่จะช่วยให้ธุรกิจของคุณเติบโต</p>
+                            <p class="card-text font-weight-bold">ราคา: 1,500 บาท</p>
+                            <button class="btn btn-primary">เพิ่มลงตะกร้า</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="product card shadow-sm">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="ชื่อสินค้า 5" class="card-img-top">
+                        <div class="card-body">
+                            <h3 class="card-title">ชื่อสินค้า 5</h3>
+                            <p class="card-text">รายละเอียดสินค้า 5 ที่จะช่วยให้ธุรกิจของคุณเติบโต</p>
+                            <p class="card-text font-weight-bold">ราคา: 2,500 บาท</p>
+                            <button class="btn btn-primary" onclick="addToCart('ชื่อสินค้า 5', 2500)">เพิ่มลงตะกร้า</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="product card shadow-sm">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="ชื่อสินค้า 6" class="card-img-top">
+                        <div class="card-body">
+                            <h3 class="card-title">ชื่อสินค้า 6</h3>
+                            <p class="card-text">รายละเอียดสินค้า 6 ที่จะช่วยให้ธุรกิจของคุณเติบโต</p>
+                            <p class="card-text font-weight-bold">ราคา: 4,000 บาท</p>
+                            <button class="btn btn-primary">เพิ่มลงตะกร้า</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center fade-in">
+        <p>&copy; 2024 ร้านขายของออนไลน์</p>
+    </footer>
+    <script>
+        // ฟังก์ชันเพิ่มสินค้าลงตะกร้า
+        function addToCart(productName, productPrice) {
+            // แสดง SweetAlert2 ยืนยันการเพิ่มสินค้า
+            Swal.fire({
+                title: 'เพิ่มสินค้าลงตะกร้าแล้ว',
+                text: `${productName} ราคา ${productPrice} บาท ได้ถูกเพิ่มลงในตะกร้า`,
+                icon: 'success',
+                confirmButtonText: 'ตกลง'
+            });
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

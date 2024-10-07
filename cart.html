@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ตะกร้า</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100;400;700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fade-in">
+            <a class="navbar-brand" href="index.html">ร้านขายของออนไลน์</a>
+            <div class="collapse navbar-collapse fade-in">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">หน้าแรก</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">สินค้า</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cart.html">ตะกร้า</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">ติดต่อเรา</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html" id="loginLink">เข้าสู่ระบบ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container my-5">
+            <h2 class="text-center mb-4 fade-in">รายการสินค้าในตะกร้า</h2>
+            <div id="cartItems" class="row">
+                <!-- สินค้าจะถูกแสดงที่นี่ -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center fade-in">
+        <p>&copy; 2024 ร้านขายของออนไลน์</p>
+    </footer>
+
+    <script>
+        // ฟังก์ชันเพื่อแสดงสินค้าจากตะกร้า
+        function displayCartItems() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cartItems');
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p>ไม่มีสินค้าในตะกร้า</p>';
+                return;
+            }
+
+            cart.forEach((item) => {
+                cartItemsContainer.innerHTML += `
+                    <div class="col-md-4 fade-in">
+                        <div class="product card shadow-sm">
+                            <div class="card-body">
+                                <h3 class="card-title">${item.name}</h3>
+                                <p class="card-text font-weight-bold">ราคา: ${item.price} บาท</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // เรียกใช้งานฟังก์ชันเมื่อโหลดหน้า
+        window.onload = displayCartItems;
+    </script>
+</body>
+</html>
